@@ -8,52 +8,54 @@ import org.openqa.selenium.WebElement;
  * The base Page Object Model.
  *
  * <p>
- * Simply extend and enjoy.</p>
+ * Simply extend and enjoy.
+ * </p>
  *
  * <p>
  * <strong>Example:</strong> public class LoginPage extends BasePage {
- * ...enjoyment }</p>
+ * ...enjoyment }
+ * </p>
  */
 public class BasePage {
 
-    public static WebDriver driver;
+	public static WebDriver driver;
 
-    /**
-     * Set the web driver used by this page object model
-     *
-     * @param driver
-     */
-    public void setDriver(WebDriver driver) {
-        BasePage.driver = driver;
-    }
+	/**
+	 * Set the web driver used by this page object model
+	 *
+	 * @param driver
+	 */
+	public void setDriver(WebDriver driver) {
+		BasePage.driver = driver;
+	}
 
-    /**
-     * Find an element
-     *
-     * @param locator
-     * @return found element
-     */
-    protected WebElement find(By locator) {
-        return driver.findElement(locator);
-    }
+	/**
+	 * Find an element
+	 *
+	 * @param locator
+	 * @return found element
+	 */
+	protected WebElement find(By locator) {
+		return driver.findElement(locator);
+	}
 
-    /**
-     * Sets the text in an input element
-     *
-     * @param locator
-     * @param text
-     */
-    protected void setText(By locator, String text) {
-        find(locator).clear();
-        find(locator).sendKeys(text);
-    }
+	/**
+	 * Sets the text in an input element
+	 *
+	 * @param locator
+	 * @param text
+	 */
+	protected void setText(By locator, String text) {
+		find(locator).clear();
+		find(locator).sendKeys(text);
+	}
 
-    /**
-     * Click on an element
-     *
-     * @param locator
-     */
-    protected void click(By locator) {
-        find(locator).click();
-    }
+	/**
+	 * Click on an element
+	 *
+	 * @param locator
+	 */
+	protected void click(By locator) {
+		find(locator).click();
+	}
 }

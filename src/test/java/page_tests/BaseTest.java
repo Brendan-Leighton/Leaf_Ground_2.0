@@ -10,25 +10,25 @@ import page_object_models.BasePage;
 
 public class BaseTest {
 
-    protected WebDriver driver;
-    protected BasePage basePage;
+	protected WebDriver driver;
+	protected BasePage basePage;
 
-    private final String url = "https://www.example.com";
-    private final int window_width = 800;
-    private final int window_height = 600;
+	private final String url = "https://www.example.com";
+	private final int window_width = 800;
+	private final int window_height = 600;
 
-    @BeforeTest
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().setSize(new Dimension(window_width, window_height));
-        driver.get(url);
+	@BeforeTest
+	public void setUp() {
+		driver = new ChromeDriver();
+		driver.manage().window().setSize(new Dimension(window_width, window_height));
+		driver.get(url);
 
-        basePage = new BasePage();
-        basePage.setDriver(driver);
-    }
+		basePage = new BasePage();
+		basePage.setDriver(driver);
+	}
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
+	@AfterClass
+	public void tearDown() {
+		driver.quit();
+	}
 }
