@@ -1,8 +1,11 @@
 package page_object_models;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * The base Page Object Model.
@@ -19,14 +22,11 @@ import org.openqa.selenium.WebElement;
 public class BasePage {
 
 	public static WebDriver driver;
+	public WebDriverWait wait;
 
-	/**
-	 * Set the web driver used by this page object model
-	 *
-	 * @param driver
-	 */
-	public void setDriver(WebDriver driver) {
+	public BasePage(WebDriver driver) {
 		BasePage.driver = driver;
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 
 	/**
@@ -36,6 +36,7 @@ public class BasePage {
 	 * @return found element
 	 */
 	protected WebElement find(By locator) {
+		wait.until(driver -> driver.findElement(locator).isDisplayed());
 		return driver.findElement(locator);
 	}
 
