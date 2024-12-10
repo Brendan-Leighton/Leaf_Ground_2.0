@@ -17,9 +17,9 @@ public class TDashboard extends BaseTest {
 		String currentUrl = driver.getCurrentUrl();
 
 		for (String url : dashboardPage.getPageUrls()) {
-			if (currentUrl == url) {
+			if (currentUrl.equals(url)) {
 				isUrlCorrect = true;
-				return;
+				break;
 			}
 		}
 
