@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -36,7 +37,7 @@ public class BasePage {
 	 * @return found element
 	 */
 	protected WebElement find(By locator) {
-		wait.until(driver -> driver.findElement(locator).isDisplayed());
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		return driver.findElement(locator);
 	}
 
