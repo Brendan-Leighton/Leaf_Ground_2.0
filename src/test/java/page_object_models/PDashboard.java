@@ -29,6 +29,18 @@ public class PDashboard extends BasePage {
 		return urls;
 	}
 
+	/** By locator for the top-bar component */
+	private final By top_bar = By.cssSelector(".layout-topbar");
+
+	/**
+	 * Get the top-bar component
+	 * 
+	 * @return the top-bar's WebElement
+	 */
+	public WebElement getTopBar() {
+		return find(top_bar);
+	}
+
 	/** By locator for the breadcrumb-bar component */
 	private final By breadcrumb_bar = By.cssSelector(".route-bar-breadcrumb");
 
