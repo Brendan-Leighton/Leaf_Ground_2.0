@@ -6,6 +6,26 @@ import org.testng.annotations.Test;
 
 public class TDashboard extends BaseTest {
 
+	/**
+	 * Priority of -1 to run before all other tests
+	 * 
+	 * Make sure page loads. This page has multiple possible urls.
+	 */
+	@Test(priority = -1)
+	public void PageLoads() {
+		boolean isUrlCorrect = false;
+		String currentUrl = driver.getCurrentUrl();
+
+		for (String url : dashboardPage.getPageUrls()) {
+			if (currentUrl == url) {
+				isUrlCorrect = true;
+				return;
+			}
+		}
+
+		Assert.assertTrue(isUrlCorrect);
+	}
+
 	@Test
 	public void BreadcrumbBarContainsCorrectText() {
 		WebElement breadcrumbBar = dashboardPage.getBreadcrumbBar();

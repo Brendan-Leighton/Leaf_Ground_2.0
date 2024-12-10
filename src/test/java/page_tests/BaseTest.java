@@ -7,13 +7,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 
 import page_object_models.BasePage;
-import page_object_models.MDashboard;
+import page_object_models.PDashboard;
 
 public class BaseTest {
 
 	protected WebDriver driver;
 	protected BasePage basePage;
-	protected MDashboard dashboardPage;
+	protected PDashboard dashboardPage;
 
 	private final String url = "https://www.leafground.com/";
 	private final int window_width = 800;
@@ -26,7 +26,7 @@ public class BaseTest {
 		driver.get(url);
 
 		basePage = new BasePage(driver);
-		dashboardPage = new MDashboard(driver);
+		dashboardPage = new PDashboard(driver);
 	}
 
 	@AfterClass
