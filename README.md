@@ -76,7 +76,7 @@ Contributions are not welcome for this project but you can still fork it and mod
 
 ## License
 
-[LICENSE.md](LICENSE.md)
+[LICENSE.md](docs/LICENSE.md)
 
 ## Contact
 
