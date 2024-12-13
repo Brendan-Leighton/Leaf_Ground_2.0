@@ -9,15 +9,14 @@ import org.openqa.selenium.WebElement;
 
 public class PDashboard extends BasePage {
 
-	private final String url_1 = "https://www.leafground.com/";
-	private final String url_2 = "https://www.leafground.com/dashboard.xhtml";
-	private List<String> urls = new ArrayList<String>();
+	// private List<String> urls = new ArrayList<String>();
+	private String[] urls = {
+			"https://www.leafground.com/",
+			"https://www.leafground.com/dashboard.xhtml"
+	};
 
 	public PDashboard(WebDriver driver) {
 		super(driver);
-
-		urls.add(url_1);
-		urls.add(url_2);
 	}
 
 	/**
@@ -26,7 +25,7 @@ public class PDashboard extends BasePage {
 	 * 
 	 * @return String representation of urls
 	 */
-	public List<String> getPageUrls() {
+	public String[] getPageUrls() {
 		return urls;
 	}
 
