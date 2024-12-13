@@ -21,9 +21,10 @@ public class PDashboard extends BasePage {
 	}
 
 	/**
-	 * Returns a list of urls as Strings
+	 * Returns a list of urls where this page can be found at.
+	 * This page has 2 possible urls.
 	 * 
-	 * @return urls as String
+	 * @return String representation of urls
 	 */
 	public List<String> getPageUrls() {
 		return urls;
