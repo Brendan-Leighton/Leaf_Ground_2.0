@@ -1,8 +1,11 @@
 package page_tests;
 
+import java.util.List;
+
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 
@@ -16,12 +19,15 @@ public class BaseTest {
 	protected PDashboard dashboardPage;
 
 	private final String url = "https://www.leafground.com/";
-	private final int window_width = 800;
-	private final int window_height = 600;
+	private final int window_width = (int) (1920 * 0.75);
+	private final int window_height = (int) (1080 * 0.75);
 
 	@BeforeTest
 	public void setUp() {
-		driver = new ChromeDriver();
+
+		ChromeOptions options = new ChromeOptions();
+		options.setExperimentalOption("excludeSwitches", List.of("enable-automation"));
+		driver = new ChromeDriver(options);
 		driver.manage().window().setSize(new Dimension(window_width, window_height));
 		driver.get(url);
 
