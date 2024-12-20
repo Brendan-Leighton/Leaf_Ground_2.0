@@ -1,3 +1,9 @@
+# PROJECT SPECIFIC
+#
+#
+# test results output folder
+_results/
+
 # JAVA
 #
 # Compiled class file
