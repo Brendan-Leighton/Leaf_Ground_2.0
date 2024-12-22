@@ -22,12 +22,12 @@ public class BaseTest {
 	public void setUp() {
 
 		// Logger messages
-		logger.trace("trace message"); // Not printed to console
-		logger.debug("debug message"); // Not printed to console
-		logger.info("info message");
-		logger.warn("warn message");
-		logger.error("error message");
-		logger.fatal("fatal message");
+		// logger.trace("trace message"); // Not printed to console
+		// logger.debug("debug message"); // Not printed to console
+		// logger.info("info message");
+		// logger.warn("warn message");
+		// logger.error("error message");
+		// logger.fatal("fatal message");
 
 		Drivers.getDriver().get(url);
 
