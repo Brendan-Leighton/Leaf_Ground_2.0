@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import lib.Drivers;
+
 public class TDashboard extends BaseTest {
 
 	/**
@@ -19,7 +21,7 @@ public class TDashboard extends BaseTest {
 	@Test(priority = -1)
 	public void PageLoads() {
 		boolean isUrlCorrect = false;
-		String currentUrl = driver.getCurrentUrl();
+		String currentUrl = Drivers.getDriver().getCurrentUrl();
 
 		for (String url : dashboardPage.getPageUrls()) {
 			if (currentUrl.equals(url)) {
@@ -44,7 +46,7 @@ public class TDashboard extends BaseTest {
 		boolean isVisible = false;
 
 		try {
-			new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(topBar));
+			new WebDriverWait(Drivers.getDriver(), Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(topBar));
 			isVisible = true;
 		} catch (TimeoutException ignore) {
 		}
