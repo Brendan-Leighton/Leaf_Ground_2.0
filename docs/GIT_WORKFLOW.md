@@ -63,7 +63,7 @@ The diagram below shows how code travels between branches.
 - Circles: a commit
 - Lines between branches: code moving between branches via `git checkout` or `git merge`
 
-![Gitflow branching diagram](assets/Gitflow.png)
+![Gitflow branching diagram](assets/git_workflow/Gitflow.png)
 
 ## Commit Message
 
